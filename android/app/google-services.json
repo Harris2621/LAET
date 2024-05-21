@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "336208504897",
+    "project_id": "baulkhos-2621",
+    "storage_bucket": "baulkhos-2621.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336208504897:android:dff80184e10dc196257ec0",
+        "android_client_info": {
+          "package_name": "com.example.baulkhos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhQwJALKmwHkYriv8R4txbIKjsNs16GiQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
