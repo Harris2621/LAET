@@ -1,5 +1,4 @@
 import 'package:baulkhos/project/screens/auth_gate.dart';
-import 'package:baulkhos/project/screens/camerascreen.dart';
 import 'package:baulkhos/project/screens/profile.dart';
 import 'package:baulkhos/project/screens/search.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'LAET',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
         '/search':(context) => SearchScreen(),
         '/profile':(context) => Profilescreen(),
         '/home':(context) => Home(),
-        '/camera':(context) => CameraScreen()
+        
       },
       
     );

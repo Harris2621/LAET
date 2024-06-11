@@ -1,4 +1,3 @@
-import 'package:baulkhos/project/widgets/bottombar.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -8,29 +7,9 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   TextEditingController _searchController = TextEditingController();
-  int _selectedIndex = 0;
+  
 
-   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex=index;
-    });
-    if(index == 1){
-      Navigator.pushNamed(context, '/search');
-
-    }
-    if(index == 0){
-      Navigator.pushNamed(context, '/home');
-
-    }
-    if(index == 2){
-      Navigator.pushNamed(context, '/profile');
-
-    }
-    if(index==3){
-      Navigator.pushNamed(context, '/camera');
-    }
-    
-  }
+   
 
   @override
   void dispose() {
@@ -73,7 +52,7 @@ class _SearchScreenState extends State<SearchScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: MyBottomNavigationBar(currentIndex:_selectedIndex ,onTap: _onItemTapped,),
+      
     );
   }
 }

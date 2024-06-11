@@ -1,4 +1,6 @@
-import 'package:baulkhos/project/widgets/bottombar.dart';
+import 'package:baulkhos/project/screens/dashboard.dart';
+import 'package:baulkhos/project/screens/profile.dart';
+import 'package:baulkhos/project/screens/search.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget{
@@ -7,49 +9,51 @@ class Home extends StatefulWidget{
   State<Home> createState() => _HomeState();
 }
 class _HomeState extends State<Home> {
+List<Widget> WidgetList = [
+  DashboardScreen(),
+  SearchScreen(),
+  Profilescreen()
 
+];
 int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
  
+ 
+ void onItemTap(index){
+  setState(() {
+    _selectedIndex = index;
+  });
+ }
 
-  void _update(int index){
-    setState(() {
-      _selectedIndex=index;
-    });
-  }
+  
 
-   void _onItemTapped(int index) {
-   _update(index);
-    if(index == 1){
-      Navigator.pushNamed(context, '/search');
-
-    }
-    if(index == 0){
-      Navigator.pushNamed(context, '/home');
-
-    }
-    if(index == 2){
-      Navigator.pushNamed(context, '/profile');
-
-    }
-    if(index==3){
-      Navigator.pushNamed(context, '/camera');
-    }
-   }
+   
 
 @override
 Widget build(BuildContext context){
   return Scaffold(
-    appBar: AppBar(title: Text("LAET"),),
+   
     body: Center(
-      child:
-      Text(
-        "hi",
-        style: optionStyle,)),
-    bottomNavigationBar: MyBottomNavigationBar(
-      currentIndex:_selectedIndex ,
-      onTap: _onItemTapped,),
+      child: WidgetList[_selectedIndex]),
+   bottomNavigationBar:BottomNavigationBar(
+      currentIndex: _selectedIndex,
+      onTap:onItemTap,
+      selectedItemColor: Colors.amber[800],
+      items: [
+        BottomNavigationBarItem(
+          icon: Icon(Icons.home),
+          label: 'Home',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.search),
+          label: 'Search',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.person),
+          label: 'Profile',
+        ),
+         
+      ],
+    )
     
   );
 }
